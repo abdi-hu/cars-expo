@@ -1,6 +1,9 @@
 const router = require('express').Router();
-const indexCtrl = require('../controllers/cars');
+const carsCtrl = require('../controllers/cars');
 
-router.get('/', indexCtrl.index)
+router.get('/', carsCtrl.index);
+router.get('/:id', carsCtrl.show);
+router.get('/new', carsCtrl.new);
+router.post('/', carsCtrl.create);
 
 module.exports = router;
