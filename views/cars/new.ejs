@@ -9,28 +9,31 @@
 </head>
 
 <body>
-    <h1>Add New Car</h1>
+    <h1>New Car</h1>
     <form action="/cars" method="POST">
-        <label>
-            <input type="text">
+        <label>Make:
+            <input type="text" name="make">
         </label>
-        <label>
-            <input type="text">
+        <label>Model:
+            <input type="text" name="model">
         </label>
-        <label>
-            <input type="text">
+        <label>Year:
+            <input type="number" name="year">
         </label>
-        <label>
-            <input type="text">
+        <label>Engine Type:
+            <input type="text" name="engineType">
         </label>
-        <label>
-            <input type="text">
+        <label>Description
+            <textarea name="description"></textarea>
         </label>
-        <label>
-            <input type="text">
-        </label>
-        <label>
-            <input type="text">
+        <label>Rating
+            <select name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         </label>
         <label>
             <input type="submit" value="ADD">
