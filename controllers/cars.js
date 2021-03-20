@@ -13,7 +13,7 @@ function index(req, res) {
 }
 function show(req, res) {
     Car.findById(req.params.id, (err, car) => {
-        res.render('cars/show', car);
+        res.render('cars/show', { car });
     });
 }
 function newCar(req, res) {
