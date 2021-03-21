@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+
+<body>
+    <h1>Edit Car</h1>
+    <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+        <label>Make:
+            <input type="text" name="make" value="<%= car.make %>">
+        </label>
+        <label>Model:
+            <input type="text" name="model" value="<%= car.model %>">
+        </label>
+        <label>Year:
+            <input type="number" name="year" value="<%= car.year %>">
+        </label>
+        <label>Engine Type:
+            <input type="text" name="engineType" value="<%= car.engineType %>">
+        </label>
+        <label>Description:
+            <textarea name="description"><%= car.description %></textarea>
+            <!-- There no value attribute for textarea -->
+        </label>
+        <label>Rating
+            <select name="rating">
+                <option value="<%= car.rating %>">
+                    <%= car.rating %>
+                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+        <label>
+            <input type="submit" value="Edit">
+        </label>
+    </form>
+</body>
+
+</html>
