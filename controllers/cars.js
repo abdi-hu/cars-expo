@@ -1,4 +1,4 @@
-const car = require('../models/car');
+const { findByIdAndDelete } = require('../models/car');
 const Car = require('../models/car');
 module.exports = {
     index,
@@ -7,6 +7,7 @@ module.exports = {
     create,
     edit,
     update,
+    delete: deleteCar
 }
 
 function index(req, res) {
@@ -36,5 +37,10 @@ function update(req, res) {
     Car.findByIdAndUpdate(req.params.id, req.body, (err, updatedcar) => {
         res.redirect('/cars');
     });
+}
+function deleteCar(req, res) {
+    Car.findByIdAndRemove(req.params.id, (err, deletedCar) => {
+        res.redirect('/cars');
+    })
 }
 

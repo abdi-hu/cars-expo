@@ -7,5 +7,6 @@ router.post('/', carsCtrl.create);
 router.get('/:id/edit', carsCtrl.edit);
 router.get('/:id', carsCtrl.show);
 router.put('/:id', carsCtrl.update);
+router.delete('/:id', carsCtrl.delete);
 
 module.exports = router;
