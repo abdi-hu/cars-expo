@@ -1,0 +1,17 @@
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+.nav-links {
+    display: inline;
+}
+
+img {
+    max-width: 250px;
+}
+
+.car-container {
+    display: flex;
+}
+

@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/head')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars | Express Projects</title>
-</head>
+    <body>
+        <%- include('../partials/header')%>
+            <main>
+                <%cars.forEach((car)=>{%>
+                    <article class="car-container">
+                        <img src="<%=car.image%>" alt="<%=car.model%>">
+                        <dir class="car-details">
+                            <p>Make: <%=car.make%>
+                            </p>
+                            <p>Model: <%=car.model%>
+                            </p>
+                            <p>Year: <%=car.year%>
+                            </p>
+                            <a href="/cars/<%=car._id%>">Details</a>
+                        </dir>
+                    </article>
+                    <%}); %>
+            </main>
+    </body>
 
-<body>
-    <h1>Index Page</h1>
-    <ul>
-        <%cars.forEach((car)=>{%>
-            <li>Make: <%=car.make%>
-            </li>
-            <li>Model: <%=car.model%>
-            </li>
-            <li>Year: <%=car.year%>
-            </li>
-            <li>Engine Type: <%=car.engineType%>
-            </li>
-            <li>Description: <%=car.description%>
-            </li>
-            <li>Rating: <%=car.rating%>
-            </li>
-            <li><a href="/cars/<%=car._id%>">Details</a>
-            </li>
-            <%}); %>
-    </ul>
-    <a href="/cars/new">Add New Car</a>
-</body>
-
-</html>
+    </html>
