@@ -3,17 +3,19 @@
     <body>
         <%- include('../partials/header')%>
             <fieldset>
-                <form action="/users/login" method="POST">
+                <form action="/users/signup" method="post">
+                    <label>Email:
+                        <input type="email" name="email">
+                    </label>
                     <label>Username:
                         <input type="text" name="username">
                     </label>
                     <label>Password:
                         <input type="password" name="password">
                     </label>
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Register">
                 </form>
             </fieldset>
-            <a href="/users/signup">Register</a>
     </body>
 
     </html>

@@ -12,16 +12,16 @@ module.exports = {
 
 function index(req, res) {
     Car.find({}, (err, cars) => {
-        res.render('cars/index', { cars, title: "Current Inventory" })
+        res.render('cars/index', { cars, title: "Current Inventory", loggedIn: req.user })
     })
 }
 function show(req, res) {
     Car.findById(req.params.id, (err, car) => {
-        res.render('cars/show', { car });
+        res.render('cars/show', { car, loggedIn: req.user });
     });
 }
 function newCar(req, res) {
-    res.render('cars/new');
+    res.render('cars/new', { loggedIn: req.user });
 }
 function create(req, res) {
     Car.create(req.body, (err, car) => {
@@ -30,7 +30,7 @@ function create(req, res) {
 }
 function edit(req, res) {
     Car.findById(req.params.id, (err, car) => {
-        res.render(`cars/edit`, { car });
+        res.render(`cars/edit`, { car, loggedIn: req.user });
     })
 }
 function update(req, res) {
