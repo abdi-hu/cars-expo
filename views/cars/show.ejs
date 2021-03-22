@@ -10,24 +10,43 @@
 
 <body>
     <h1>Details</h1>
-    <ul>
-        <li>Make: <%=car.make%>
-        </li>
-        <li>Model: <%=car.model%>
-        </li>
-        <li>Year: <%=car.year%>
-        </li>
-        <li>Engine Type: <%=car.engineType%>
-        </li>
-        <li>Description: <%=car.description%>
-        </li>
-        <li>Rating: <%=car.rating%>
-        </li>
-    </ul>
-    <a href="/cars/<%=car._id%>/edit">Edit</a>
-    <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-    </form>
+    <img src="<%=car.image%>" alt="<%=car.model%>">
+    <h3>
+        <%=car.year%>
+            <%=car.make%>
+                <%=car.model%>:
+    </h3>
+    <p>
+        <%=car.description%>
+    </p>
+    <h3>Rating</h3>
+    <%if(car.ratings) {%>
+        <p>text:<%= car.ratings.text %>
+        </p>
+        <p>performance:<%= car.ratings.performance %>
+        </p>
+        <p>style:<%= car.ratings.style %>
+        </p>
+        <%} else {%>
+            <p>Not Rated</p>
+            <%}%>
+                <!-- ratings form -->
+                <form action="/cars/<%=car._id%>/ratings" method="POST">
+                    <label>Performance:
+                        <input type="number" name="performance">
+                    </label>
+                    <label>Style:
+                        <input type="number" name="style">
+                    </label>
+                    <label>Review:
+                        <textarea name="text"></textarea>
+                    </label>
+                    <input type="submit" value="Rate">
+                </form>
+                <a href="/cars/<%=car._id%>/edit">Edit</a>
+                <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
 </body>
 
 </html>

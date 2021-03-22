@@ -1,4 +1,4 @@
-nav ul {
+nav {
     display: flex;
     justify-content: space-between;
     background-color: aqua;
@@ -6,7 +6,9 @@ nav ul {
 .nav-links {
     display: inline;
 }
-
+h1 {
+    text-align: center;
+}
 img {
     max-width: 250px;
 }

@@ -12,7 +12,7 @@ module.exports = {
 
 function index(req, res) {
     Car.find({}, (err, cars) => {
-        res.render('cars/index', { cars, title: "Musle Car Expo" })
+        res.render('cars/index', { cars, title: "Current Inventory" })
     })
 }
 function show(req, res) {
