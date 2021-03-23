@@ -31,7 +31,7 @@ function newUser(req, res) {
 }
 function signUp(req, res) {
     req.body.password = bcrypt.hashSync(req.body.password, SALT_ROUNDS);
-    req.body.admin = true;
+    req.body.admin = false;
     User.create(req.body, (err, newUser) => {
         console.log(newUser);
         res.redirect('/');

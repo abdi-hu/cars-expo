@@ -11,17 +11,33 @@ module.exports = {
 }
 
 function index(req, res) {
-    Car.find({}, (err, cars) => {
-        res.render('cars/index', { cars, title: "Current Inventory", loggedIn: req.user })
-    })
+    if (req.user) {
+        Car.find({}, (err, cars) => {
+            res.render('cars/index', { cars, title: "Current Inventory", loggedIn: req.user })
+        })
+    } else {
+        res.redirect('/users/signin');
+    }
 }
 function show(req, res) {
-    Car.findById(req.params.id, (err, car) => {
-        res.render('cars/show', { car, loggedIn: req.user });
-    });
+    if (req.user) {
+        Car.findById(req.params.id, (err, car) => {
+            res.render('cars/show', { car, loggedIn: req.user });
+        });
+    } else {
+        res.redirect('/users/signin');
+    }
 }
 function newCar(req, res) {
-    res.render('cars/new', { loggedIn: req.user });
+    if (req.user) {
+        if (req.user.admin) {
+            res.render('cars/new', { loggedIn: req.user });
+        } else {
+            res.redirect('/users/signin');
+        }
+    } else {
+        res.redirect('/users/signin');
+    }
 }
 function create(req, res) {
     Car.create(req.body, (err, car) => {
