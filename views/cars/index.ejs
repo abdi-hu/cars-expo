@@ -1,19 +1,21 @@
 <%- include('../partials/header')%>
     <main>
-        <%cars.forEach((car)=>{%>
-            <article class="car-container">
-                <img class="car-image" src="<%=car.image%>" alt="<%=car.model%>">
-                <dir class="car-details">
-                    <p>Make: <%=car.make%>
-                    </p>
-                    <p>Model: <%=car.model%>
-                    </p>
-                    <p>Year: <%=car.year%>
-                    </p>
-                    <a href="/cars/<%=car._id%>">Details</a>
-                </dir>
-            </article>
-            <%}); %>
+        <div class="index-container">
+            <%cars.forEach((car)=>{%>
+                <article class="car-container">
+                    <img class="car-image" src="<%=car.image%>" alt="<%=car.model%>">
+                    <dir class="car-details">
+                        <p>Make: <%=car.make%>
+                        </p>
+                        <p>Model: <%=car.model%>
+                        </p>
+                        <p>Year: <%=car.year%>
+                        </p>
+                        <a href="/cars/<%=car._id%>">Details</a>
+                    </dir>
+                </article>
+                <%}); %>
+        </div>
     </main>
     </body>
 
