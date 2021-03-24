@@ -1,8 +1,33 @@
-<%- include('../partials/head')%>
+<%- include('../partials/header')%>
+    <%cars.forEach((car)=>{%>
+        <h3>
+            <%=`${car.year} ${car.make} ${car.model}`%>
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%car.bids.forEach((bid)=>{%>
+                    <tr>
+                        <td>
+                            <%=`${bid.firstName} ${bid.lastName}`%>
+                        </td>
+                        <td>
+                            <%=bid.phone%>
+                        </td>
+                        <td>
+                            <%=bid.amount%>
+                        </td>
+                    </tr>
+                    <%});%>
+            </tbody>
+        </table>
+        <%});%>
+            </body>
 
-    <body>
-        <%- include('../partials/header')%>
-
-    </body>
-
-    </html>
+            </html>

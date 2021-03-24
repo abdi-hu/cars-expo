@@ -1,49 +1,46 @@
-<%- include('../partials/head')%>
-
-    <body>
-        <%- include('../partials/header')%>
-            <img src="<%=car.image%>" alt="<%=car.model%>">
-            <h3>
-                <%=car.year%>
-                    <%=car.make%>
-                        <%=car.model%>:
-            </h3>
-            <%if(admin) {%>
-                <h4>
-                    <a href="/cars/<%=car._id%>/edit">Edit</a>
-                    <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
-                        <button type="submit">Delete</button>
-                    </form>
-                </h4>
-                <%}%>
-                    <p>
-                        <%=car.description%>
-                    </p>
-                    <h3>Bids:</h3>
-                    <%if(car.bids) {%>
-                        <p>Total Bids:<%= car.bids.length; %>
-                                <%if(admin) {%>
-                                    <a href="/bids">View All Bids</a>
+<%- include('../partials/header')%>
+    <img src="<%=car.image%>" alt="<%=car.model%>">
+    <h3>
+        <%=car.year%>
+            <%=car.make%>
+                <%=car.model%>:
+    </h3>
+    <%if(admin) {%>
+        <h4>
+            <a href="/cars/<%=car._id%>/edit">Edit</a>
+            <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+        </h4>
+        <%}%>
+            <p>
+                <%=car.description%>
+            </p>
+            <h3>Bids:</h3>
+            <%if(car.bids) {%>
+                <p>Total Bids:<%= car.bids.length; %>
+                        <%if(admin) {%>
+                            <a href="/bids">View All Bids</a>
+                            <%}%>
+                                <%} else {%>
+                                    <p>No Bids Yet</p>
                                     <%}%>
-                                        <%} else {%>
-                                            <p>No Bids Yet</p>
-                                            <%}%>
-                                                <h3>Place Bid:</h3>
-                                                <form action="/cars/<%=car._id%>/bids" method="POST">
-                                                    <label>First Name:
-                                                        <input type="text" name="firstName">
-                                                    </label>
-                                                    <label>Last Name:
-                                                        <input type="text" name="lastName">
-                                                    </label>
-                                                    <label>Phone:
-                                                        <input type="Number" name="phone">
-                                                    </label>
-                                                    <label>Amount:
-                                                        <input type="Number" name="amount">
-                                                    </label>
-                                                    <input type="submit" value="Place Bid">
-                                                </form>
-    </body>
+                                        <h3>Place Bid:</h3>
+                                        <form action="/cars/<%=car._id%>/bids" method="POST">
+                                            <label>First Name:
+                                                <input type="text" name="firstName">
+                                            </label>
+                                            <label>Last Name:
+                                                <input type="text" name="lastName">
+                                            </label>
+                                            <label>Phone:
+                                                <input type="Number" name="phone">
+                                            </label>
+                                            <label>Amount:
+                                                <input type="Number" name="amount">
+                                            </label>
+                                            <input type="submit" value="Place Bid">
+                                        </form>
+                                        </body>
 
-    </html>
+                                        </html>

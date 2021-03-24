@@ -30,7 +30,7 @@ function show(req, res) {
 function newCar(req, res) {
     if (req.user) {
         if (req.user.admin) {
-            res.render('cars/new', { loggedIn: req.user });
+            res.render('cars/new', { loggedIn: req.user, title: 'New Car' });
         } else {
             res.send('<h1>Your Acount is not authorized to view this page</h1>');
         }
@@ -45,7 +45,7 @@ function create(req, res) {
 }
 function edit(req, res) {
     Car.findById(req.params.id, (err, car) => {
-        res.render(`cars/edit`, { car, loggedIn: req.user });
+        res.render(`cars/edit`, { car, loggedIn: req.user, title: 'Edit Car' });
     })
 }
 function update(req, res) {
