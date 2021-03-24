@@ -10,7 +10,7 @@ module.exports = {
     logout
 }
 function signIn(req, res) {
-    res.render('users/login', { title: 'Login', loggedIn: req.user })
+    res.render('users/login', { title: '', loggedIn: req.user })
 }
 function login(req, res) {
     User.findOne({ username: req.body.username }, (err, foundUser) => {

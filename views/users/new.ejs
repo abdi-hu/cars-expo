@@ -1,21 +1,18 @@
-<%- include('../partials/head')%>
-
-    <body>
-        <%- include('../partials/header')%>
-            <fieldset>
-                <form action="/users/signup" method="post">
-                    <label>Email:
-                        <input type="email" name="email">
-                    </label>
-                    <label>Username:
-                        <input type="text" name="username">
-                    </label>
-                    <label>Password:
-                        <input type="password" name="password">
-                    </label>
-                    <input type="submit" value="Register">
-                </form>
-            </fieldset>
+<%- include('../partials/header')%>
+    <fieldset>
+        <form action="/users/signup" method="post">
+            <label>Email:
+                <input type="email" name="email">
+            </label>
+            <label>Username:
+                <input type="text" name="username">
+            </label>
+            <label>Password:
+                <input type="password" name="password">
+            </label>
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
     </body>
 
     </html>

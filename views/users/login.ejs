@@ -1,19 +1,19 @@
-<%- include('../partials/head')%>
-
-    <body>
-        <%- include('../partials/header')%>
+<%- include('../partials/header')%>
+    <div class="container">
+        <form action="/users/login" method="POST">
             <fieldset>
-                <form action="/users/login" method="POST">
-                    <label>Username:
-                        <input type="text" name="username">
-                    </label>
-                    <label>Password:
-                        <input type="password" name="password">
-                    </label>
-                    <input type="submit" value="Login">
-                </form>
+                <legend>Login</legend>
+                <label>Username:
+                    <input type="text" name="username">
+                </label>
+                <label>Password:
+                    <input type="password" name="password">
+                </label>
+                <input type="submit" value="Login">
+                <a href="/users/new">Register</a>
             </fieldset>
-            <a href="/users/new">Register</a>
+        </form>
+    </div>
     </body>
 
     </html>
