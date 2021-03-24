@@ -7,6 +7,7 @@ module.exports = {
     login,
     new: newUser,
     signUp,
+    logout
 }
 function signIn(req, res) {
     res.render('users/login', { title: 'Login', loggedIn: req.user })
@@ -19,6 +20,8 @@ function login(req, res) {
             const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password);
             if (doesPasswordMatch) {
                 req.session.userId = foundUser._id;
+                req.session.username = foundUser.username;
+                console.log(req.session);
                 res.redirect('/cars');
             } else {
                 res.redirect('signin');
@@ -31,9 +34,11 @@ function newUser(req, res) {
 }
 function signUp(req, res) {
     req.body.password = bcrypt.hashSync(req.body.password, SALT_ROUNDS);
-    req.body.admin = false;
     User.create(req.body, (err, newUser) => {
-        console.log(newUser);
         res.redirect('/');
     });
+}
+function logout(req, res) {
+    req.session.destroy();
+    res.redirect('/');
 }

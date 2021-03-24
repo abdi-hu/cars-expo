@@ -1,21 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ratingSchema = new Schema({
-    performance: {
-        type: Number,
-        min: 1,
-        max: 10,
-    },
-    style: {
-        type: Number,
-        min: 1,
-        max: 10,
-    },
-    text: String,
+const bidSchema = new Schema({
+    firstName: String,
+    lastName: String,
+    phone: Number,
+    amount: Number,
     username: String,
-})
-
+});
 const carSchema = new Schema({
     make: String,
     model: String,
@@ -23,7 +15,7 @@ const carSchema = new Schema({
     image: String,
     engineType: String,
     description: String,
-    rating: [ratingSchema],
-})
+    bids: [bidSchema],
+});
 
 module.exports = mongoose.model('Car', carSchema);

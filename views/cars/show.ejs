@@ -1,52 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/head')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <body>
+        <%- include('../partials/header')%>
+            <img src="<%=car.image%>" alt="<%=car.model%>">
+            <h3>
+                <%=car.year%>
+                    <%=car.make%>
+                        <%=car.model%>:
+            </h3>
+            <%if(admin) {%>
+                <h4>
+                    <a href="/cars/<%=car._id%>/edit">Edit</a>
+                    <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </h4>
+                <%}%>
+                    <p>
+                        <%=car.description%>
+                    </p>
+                    <h3>Bids:</h3>
+                    <%if(car.bids) {%>
+                        <p>Total Bids:<%= car.bids.length; %>
+                                <%if(admin) {%>
+                                    <a href="/bids">View All Bids</a>
+                                    <%}%>
+                                        <%} else {%>
+                                            <p>No Bids Yet</p>
+                                            <%}%>
+                                                <h3>Place Bid:</h3>
+                                                <form action="/cars/<%=car._id%>/bids" method="POST">
+                                                    <label>First Name:
+                                                        <input type="text" name="firstName">
+                                                    </label>
+                                                    <label>Last Name:
+                                                        <input type="text" name="lastName">
+                                                    </label>
+                                                    <label>Phone:
+                                                        <input type="Number" name="phone">
+                                                    </label>
+                                                    <label>Amount:
+                                                        <input type="Number" name="amount">
+                                                    </label>
+                                                    <input type="submit" value="Place Bid">
+                                                </form>
+    </body>
 
-<body>
-    <h1>Details</h1>
-    <img src="<%=car.image%>" alt="<%=car.model%>">
-    <h3>
-        <%=car.year%>
-            <%=car.make%>
-                <%=car.model%>:
-    </h3>
-    <p>
-        <%=car.description%>
-    </p>
-    <h3>Rating</h3>
-    <%if(car.ratings) {%>
-        <p>text:<%= car.ratings.text %>
-        </p>
-        <p>performance:<%= car.ratings.performance %>
-        </p>
-        <p>style:<%= car.ratings.style %>
-        </p>
-        <%} else {%>
-            <p>Not Rated</p>
-            <%}%>
-                <!-- ratings form -->
-                <form action="/cars/<%=car._id%>/ratings" method="POST">
-                    <label>Performance:
-                        <input type="number" name="performance">
-                    </label>
-                    <label>Style:
-                        <input type="number" name="style">
-                    </label>
-                    <label>Review:
-                        <textarea name="text"></textarea>
-                    </label>
-                    <input type="submit" value="Rate">
-                </form>
-                <a href="/cars/<%=car._id%>/edit">Edit</a>
-                <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
-                    <button type="submit">Delete</button>
-                </form>
-</body>
-
-</html>
+    </html>

@@ -8,7 +8,7 @@ require('./config/database');
 //require config file
 const indexRouter = require('./routes/index');
 const carsRouter = require('./routes/cars');
-const ratingsRouter = require('./routes/ratings');
+const bidsRouter = require('./routes/bids');
 const usersRouter = require('./routes/users');
 
 //require route variables
@@ -31,7 +31,7 @@ app.use(authorization.addUserToRequest);
 app.use('/', indexRouter);
 app.use('/cars', carsRouter);
 app.use('/users', usersRouter);
-app.use('/', ratingsRouter);
+app.use('/', bidsRouter);
 
 app.listen(port, () => {
     console.log(`Express is listening on on port: ${port}`);

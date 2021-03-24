@@ -1,4 +1,3 @@
-const { findByIdAndDelete } = require('../models/car');
 const Car = require('../models/car');
 module.exports = {
     index,
@@ -7,7 +6,7 @@ module.exports = {
     create,
     edit,
     update,
-    delete: deleteCar
+    delete: deleteCar,
 }
 
 function index(req, res) {
@@ -22,7 +21,7 @@ function index(req, res) {
 function show(req, res) {
     if (req.user) {
         Car.findById(req.params.id, (err, car) => {
-            res.render('cars/show', { car, loggedIn: req.user });
+            res.render('cars/show', { car, loggedIn: req.user, title: 'Details', admin: req.user.admin });
         });
     } else {
         res.redirect('/users/signin');
@@ -33,7 +32,7 @@ function newCar(req, res) {
         if (req.user.admin) {
             res.render('cars/new', { loggedIn: req.user });
         } else {
-            res.redirect('/users/signin');
+            res.send('<h1>Your Acount is not authorized to view this page</h1>');
         }
     } else {
         res.redirect('/users/signin');
@@ -59,4 +58,3 @@ function deleteCar(req, res) {
         res.redirect('/cars');
     })
 }
-
