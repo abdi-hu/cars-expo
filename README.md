@@ -39,3 +39,4 @@ Deployed Site: cars-expo.herokuapp.com
 - Modals
 - Oauth(PassportJS) with Google
 - KBB API 
+- Optomize for mobile view
