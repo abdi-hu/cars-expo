@@ -1,53 +1,55 @@
 <%- include('../partials/header')%>
-    <div class="details-container">
-        <div id="detail-image">
-            <img src="<%=car.image%>" alt="<%=car.model%>">
+    <main>
+        <div class="details-container">
+            <div id="detail-image">
+                <img src="<%=car.image%>" alt="<%=car.model%>">
+            </div>
+            <div id="car-details">
+                <h3>
+                    <%=car.year%>
+                        <%=car.make%>
+                            <%=car.model%>:
+                </h3>
+                <%if(admin) {%>
+                    <h4>
+                        <a href="/cars/<%=car._id%>/edit">Edit</a>
+                        <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </h4>
+                    <%}%>
+                        <p>
+                            <%=car.description%>
+                        </p>
+                        <%if(car.bids) {%>
+                            <p>Total Bids:<%= car.bids.length; %>
+                                    <%if(admin) {%>
+                                        <a href="/bids">View All Bids</a>
+                                        <%}%>
+                                            <%} else {%>
+                                                <p>No Bids Yet</p>
+                                                <%}%>
+            </div>
         </div>
-        <div id="car-details">
-            <h3>
-                <%=car.year%>
-                    <%=car.make%>
-                        <%=car.model%>:
-            </h3>
-            <%if(admin) {%>
-                <h4>
-                    <a href="/cars/<%=car._id%>/edit">Edit</a>
-                    <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
-                        <button type="submit">Delete</button>
-                    </form>
-                </h4>
-                <%}%>
-                    <p>
-                        <%=car.description%>
-                    </p>
-                    <%if(car.bids) {%>
-                        <p>Total Bids:<%= car.bids.length; %>
-                                <%if(admin) {%>
-                                    <a href="/bids">View All Bids</a>
-                                    <%}%>
-                                        <%} else {%>
-                                            <p>No Bids Yet</p>
-                                            <%}%>
+        <div>
+            <fieldset class="user-form">
+                <legend>Place Bid</legend>
+                <form action="/cars/<%=car._id%>/bids" method="POST">
+                    <label>First Name:
+                        <input type="text" name="firstName">
+                    </label>
+                    <label>Last Name:
+                        <input type="text" name="lastName">
+                    </label>
+                    <label>Phone:
+                        <input type="Number" name="phone">
+                    </label>
+                    <label>Amount:
+                        <input type="Number" name="amount">
+                    </label>
+                    <input type="submit" value="Place Bid">
+                </form>
+            </fieldset>
         </div>
-    </div>
-    <div>
-        <fieldset class="user-form">
-            <legend>Place Bid</legend>
-            <form action="/cars/<%=car._id%>/bids" method="POST">
-                <label>First Name:
-                    <input type="text" name="firstName">
-                </label>
-                <label>Last Name:
-                    <input type="text" name="lastName">
-                </label>
-                <label>Phone:
-                    <input type="Number" name="phone">
-                </label>
-                <label>Amount:
-                    <input type="Number" name="amount">
-                </label>
-                <input type="submit" value="Place Bid">
-            </form>
-        </fieldset>
-    </div>
+    </main>
     <%- include('../partials/footer')%>
