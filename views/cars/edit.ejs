@@ -1,28 +1,33 @@
 <%- include('../partials/header')%>
-    <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
-        <label>Make:
-            <input type="text" name="make" value="<%= car.make %>">
-        </label>
-        <label>Model:
-            <input type="text" name="model" value="<%= car.model %>">
-        </label>
-        <label>Year:
-            <input type="number" name="year" value="<%= car.year %>">
-        </label>
-        <label>Engine Type:
-            <input type="text" name="engineType" value="<%= car.engineType %>">
-        </label>
-        <label>Image::
-            <input type="text" name="image" value="<%= car.image %>">
-        </label>
-        <label>Description:
-            <textarea name="description"><%= car.description %></textarea>
-            <!-- There no value attribute for textarea -->
-        </label>
-        <label>
-            <input type="submit" value="Edit">
-        </label>
-    </form>
-    </body>
-
-    </html>
+    <div class="car-form-constainer">
+        <div class="form-image">
+            <img src="/imgs/engine.jpg" alt="Engine">
+        </div>
+        <div>
+            <form class="car-form" action="/cars/<%=car._id%>?_method=PUT" method="POST">
+                <label>Make:
+                    <input type="text" name="make" value="<%= car.make %>">
+                </label>
+                <label>Model:
+                    <input type="text" name="model" value="<%= car.model %>">
+                </label>
+                <label>Year:
+                    <input type="number" name="year" value="<%= car.year %>">
+                </label>
+                <label>Engine Type:
+                    <input type="text" name="engineType" value="<%= car.engineType %>">
+                </label>
+                <label>Image::
+                    <input type="text" name="image" value="<%= car.image %>">
+                </label>
+                <label>Description:
+                    <textarea name="description"><%= car.description %></textarea>
+                    <!-- There no value attribute for textarea -->
+                </label>
+                <label>
+                    <input type="submit" value="Edit">
+                </label>
+            </form>
+        </div>
+    </div>
+    <%- include('../partials/footer')%>

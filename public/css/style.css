@@ -3,6 +3,9 @@ html,body {
     background-size: cover;
     position: sticky;
     background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    min-height: 100vh;
 }
 nav {
     display: flex;
@@ -41,19 +44,86 @@ h1 {
     color: white;
 }
 
-fieldset {
-    width: 25vw;
-    height: 30vw;
+.user-form {
+    width: 200px;
+    height: 300px;
     margin: 50px auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px #ddd,
+    box-shadow: 1px 1px 10px black,
                 -1px -1px 10px #ddd,
                 1px -1px 10px #ddd,
                 -1px 1px 10px #ddd;
+    background-color: rgba(45,54,103, .6);
+    backdrop-filter: blur(2px);
+    color: white;
+    text-shadow: 2px 2px 3px red;
 }
 legend {
     padding: 0px 10px;
     font-weight: 500;
+}
+.car-form-constainer {
+    display: flex;
+    justify-content: center;
+}
+.form-image img{
+    max-height: 500px;
+    border-top-left-radius: 10px;
+    box-shadow: 0 -5px 5px -5px rgb(45,54,103),
+                0 -5px 5px -5px rgb(45,54,103),
+                -5px 0 5px -5px rgb(45,54,103),
+                -5px 0 5px -5px rgb(45,54,103);
+    
+}
+.car-form {
+    width: 300px;
+    height: 500px;
+    border-top-right-radius: 10px;
+    background-color: rgba(45,54,103, .4);
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-around;
+    backdrop-filter: blur(2px);
+    color: white;
+    text-shadow: 2px 2px 3px red;
+    box-shadow: 0 -5px 5px -5px rgb(45,54,103),
+                0 -5px 5px -5px rgb(45,54,103),
+                5px 0 5px -5px rgb(45,54,103),
+                5px 0 5px -5px rgb(45,54,103);
+}
+.details-container {
+    display: flex;
+    flex-direction: column;
+}
+#detail-image {
+    align-self: center;
+    box-shadow: 1px 1px 10px black,
+                -1px -1px 10px #ddd,
+                1px -1px 10px #ddd,
+                -1px 1px 10px #ddd;
+                margin: 0 0 10px 0;
+}
+#detail-image img {
+    max-width: 500px;
+}
+#car-details {
+    background-color: rgba(45,54,103, .4);
+    max-width: 600px;
+    align-self: center;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 2px 2px 3px red;
+}
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

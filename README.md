@@ -1,4 +1,4 @@
-# SEIR Muscle Car Expo
+# Muscle Car Expo
 
 ## Screenshots
 
@@ -36,5 +36,6 @@ Deployed Site: cars-expo.herokuapp.com
 
 ## Planned Future Enhancements
 - Additional Error Routing
+- Modals
 - Oauth(PassportJS) with Google
 - KBB API 

@@ -1,5 +1,6 @@
 <%- include('../partials/header')%>
-    <fieldset>
+    <fieldset class="user-form">
+        <legend>Registration</legend>
         <form action="/users/signup" method="post">
             <label>Email:
                 <input type="email" name="email">
@@ -13,6 +14,4 @@
             <input type="submit" value="Register">
         </form>
     </fieldset>
-    </body>
-
-    </html>
+    <%- include('../partials/footer')%>

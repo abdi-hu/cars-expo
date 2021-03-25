@@ -1,19 +1,17 @@
 <%- include('../partials/header')%>
-    <div class="container">
+    <fieldset class="user-form">
+        <legend>Login</legend>
         <form action="/users/login" method="POST">
-            <fieldset>
-                <legend>Login</legend>
-                <label>Username:
-                    <input type="text" name="username">
-                </label>
-                <label>Password:
-                    <input type="password" name="password">
-                </label>
-                <input type="submit" value="Login">
-                <a href="/users/new">Register</a>
-            </fieldset>
+            <label>Username:
+                <input type="text" name="username">
+            </label>
+            <label>Password:
+                <input type="password" name="password">
+            </label>
+            <input type="submit" value="Login">
         </form>
-    </div>
-    </body>
-
-    </html>
+        <form action="/users/new">
+            <input type="submit" value="Register" />
+        </form>
+    </fieldset>
+    <%- include('../partials/footer')%>
