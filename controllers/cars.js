@@ -12,7 +12,6 @@ module.exports = {
 function index(req, res) {
     if (req.user) {
         Car.find({}, (err, cars) => {
-            console.log(req.user);
             res.render('cars/index', { cars, title: "Current Inventory", loggedIn: req.user })
         })
     } else {
