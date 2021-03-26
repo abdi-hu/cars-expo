@@ -13,6 +13,7 @@ This is a site to auction classic cars. Users are required to register and login
 - NodeJS
 - CSS
 - Mongo DB
+- Bootstrap v5
 - Dependecies
     - Express
     - EJS
