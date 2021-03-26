@@ -32,6 +32,7 @@ function newCar(req, res) {
         if (req.user.admin) {
             res.render('cars/new', { loggedIn: req.user, title: 'New Car' });
         } else {
+            //need to create a view for this
             res.send('<h1>Your Acount is not authorized to view this page</h1>');
         }
     } else {

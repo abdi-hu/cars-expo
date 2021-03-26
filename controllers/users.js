@@ -21,7 +21,6 @@ function login(req, res) {
             if (doesPasswordMatch) {
                 req.session.userId = foundUser._id;
                 req.session.username = foundUser.username;
-                console.log(req.session);
                 res.redirect('/cars');
             } else {
                 res.redirect('signin');
