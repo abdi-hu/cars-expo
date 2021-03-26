@@ -1,7 +1,14 @@
-# Muscle Car Expo
-
+# Car Expo
+This is a site to auction classic cars. Users are required to register and login in order to view the inventory and place bids. Only administrative users can make chnages to the cars and view current bids on each car.  
 ## Screenshots
-
+![Screenshot of home page](./public/imgs/screen-home.png)
+![Screenshot of login](./public/imgs/screen-login.png)
+![Screenshot of inventory](./public/imgs/screen-inventory.png)
+![Screenshot of adding car](./public/imgs/screen-new.png)
+![Mobile Screenshot of inventory](./public/imgs/screen-mb-inventory.png)
+![Mobile Screenshot of car details](./public/imgs/screen-mb-details.png)
+![Mobile Screenshot of car details #2](./public/imgs/screen-mb-details2.png)
+![Screenshot of all current bids](./public/imgs/screen-bids.png)
 ## Technologies Used
 - NodeJS
 - CSS
@@ -15,8 +22,6 @@
     - Method Override
     - Bcrypt
     - Dotenv
-    - Path
-    - Serve Favicon
 - Car data from autolist.com
 ## Getting Started
 Deployed Site: cars-expo.herokuapp.com
@@ -35,8 +40,9 @@ Deployed Site: cars-expo.herokuapp.com
 5. Run Nodemon on server.js
 
 ## Planned Future Enhancements
-- Additional Error Routing
+- Error Routing
 - Modals
+- Set requirements for data
 - Oauth(PassportJS) with Google
 - KBB API 
 - Optomize for mobile view
