@@ -22,12 +22,18 @@
 					<img class="nav-image" src="/imgs/mustang.png" alt="home-icon" />
 					Home
 				</a>
+				<%if(loggedIn) {%>
 				<a class="nav-links" href="/cars">Inventory</a>
 				<a class="nav-links" href="/cars/new">Add Car</a>
-				<%if(loggedIn) {%>
-				<a class="nav-links" href="/users/logout">Logout</a>
+				<div>
+					<img src="<%=loggedIn.avatar%>" alt="avatar" />
+					<a class="nav-links" href="/users/logout">Logout</a>
+				</div>
 				<%} else {%>
-				<a class="nav-links" href="/users/signin">Login</a>
+				<a class="nav-links" href="/google"
+					><img src="/imgs/google.png" alt="" style="max-width: 30px" />
+					Login
+				</a>
 				<%}%>
 			</nav>
 			<h1><%=title%></h1>
