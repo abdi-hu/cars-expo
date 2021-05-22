@@ -9,16 +9,17 @@ router.get("/", (req, res) => {
 	});
 });
 router.get(
-	"/auth/google",
-	passport.authenticate("google", { scope: ["profile"] })
+	"/google",
+	passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 router.get(
-	"/auth/google/callback",
+	"/google/callback",
 	passport.authenticate("google", { failureRedirect: "/login" }),
 	function (req, res) {
+		console.log(req.user);
 		// Successful authentication, redirect home.
-		res.redirect("/");
+		res.redirect("/cars");
 	}
 );
 

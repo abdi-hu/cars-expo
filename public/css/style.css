@@ -35,7 +35,7 @@ legend {
 	color: var(--secondary);
 }
 nav {
-	height: 3rem;
+	height: 3.5rem;
 	display: flex;
 	justify-content: space-around;
 	background-image: url("/imgs/banner.png");
@@ -46,7 +46,8 @@ nav {
 }
 .nav-links {
 	display: inline;
-	color: var(--tertiary);
+	color: rgb(214, 177, 177);
+	padding: 0 10px;
 }
 
 .nav-image {
