@@ -1,37 +1,27 @@
 <%- include('../partials/header')%>
-    <main>
-        <%cars.forEach((car)=>{%>
-            <table class="table table-dark table-striped caption-top">
-                <caption>
-                    <%=`${car.year} ${car.make} ${car.model}`%>
-                </caption>
-                <thead>
-                    <tr class="table-primary">
-                        <th scope="col">Name</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%car.bids.forEach((bid)=>{%>
-                        <tr class="table-success">
-                            <th scope="row">
-                                <%=`${bid.firstName} ${bid.lastName}`%>
-                            </th>
-                            <td>
-                                <%=bid.phone%>
-                            </td>
-                            <td>
-                                <%=bid.username%>
-                            </td>
-                            <td>
-                                <%=`$${bid.amount}`%>
-                            </td>
-                        </tr>
-                        <%});%>
-                </tbody>
-            </table>
-            <%});%>
-    </main>
-    <%- include('../partials/footer')%>
+<main>
+	<%cars.forEach((car)=>{%>
+	<h4><%=`${car.year} ${car.make} ${car.model}`%></h4>
+	<table class="table">
+		<thead>
+			<tr class="table-primary">
+				<th scope="col">Name</th>
+				<th scope="col">Phone Number</th>
+				<th scope="col">Username</th>
+				<th scope="col">Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%car.bids.forEach((bid)=>{%>
+			<tr class="table-success">
+				<th scope="row"><%=`${bid.firstName} ${bid.lastName}`%></th>
+				<td><%=bid.phone%></td>
+				<td><%=bid.username%></td>
+				<td><%=`$${bid.amount}`%></td>
+			</tr>
+			<%});%>
+		</tbody>
+	</table>
+	<%});%>
+</main>
+<%- include('../partials/footer')%>

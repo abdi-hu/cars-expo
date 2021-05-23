@@ -1,34 +1,40 @@
 <%- include('../partials/header')%>
-    <main>
-        <div class="car-form-constainer">
-            <div class="form-image">
-                <img src="/imgs/engine.jpg" alt="Engine">
-            </div>
-            <div>
-                <form class="car-form" action="/cars" method="POST">
-                    <label>Make:
-                        <input type="text" name="make">
-                    </label>
-                    <label>Model:
-                        <input type="text" name="model">
-                    </label>
-                    <label>Year:
-                        <input type="number" name="year">
-                    </label>
-                    <label>Engine Type:
-                        <input type="text" name="engineType">
-                    </label>
-                    <label> Image:
-                        <input type="text" name="image" placeholder="Image URL">
-                    </label>
-                    <label>Description:
-                        <textarea name="description"></textarea>
-                    </label>
-                    <label>
-                        <input type="submit" value="ADD">
-                    </label>
-                </form>
-            </div>
-        </div>
-    </main>
-    <%- include('../partials/footer')%>
+<main>
+	<div class="car-form-container">
+		<div class="form-image">
+			<img src="/imgs/engine.jpg" alt="Engine" />
+		</div>
+		<div>
+			<form class="car-form" action="/cars" method="POST">
+				<label
+					>Make:
+					<input type="text" name="make" />
+				</label>
+				<label
+					>Model:
+					<input type="text" name="model" />
+				</label>
+				<label
+					>Year:
+					<input type="number" name="year" />
+				</label>
+				<label
+					>Engine Type:
+					<input type="text" name="engineType" />
+				</label>
+				<label>
+					Image:
+					<input type="text" name="image" placeholder="Image URL" />
+				</label>
+				<label
+					>Description:
+					<textarea name="description"></textarea>
+				</label>
+				<label>
+					<input type="submit" value="ADD" />
+				</label>
+			</form>
+		</div>
+	</div>
+</main>
+<%- include('../partials/footer')%>

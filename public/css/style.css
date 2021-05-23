@@ -5,9 +5,11 @@
 		-1px 1px 0 #000, 1px 1px 0 #000;
 	--primary: #4fc4cc;
 	--secondary: #dd516b;
-	--tertiary: #574fcc;
+	--tertiary: #2d3667;
 	--headingFont: "Pattaya", sans-serif;
 	--primaryFont: "Roboto", sans-serif;
+	--boxShadow: 1px 1px 10px #2d3667, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+		-1px 1px 10px #ddd;
 }
 
 html,
@@ -25,10 +27,15 @@ main {
 	margin: 0 0 15px 0;
 }
 h1 {
+	margin-top: 10px;
 	font-size: 60px;
-	text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-		-1px 1px 0 #000, 1px 1px 0 #000;
+	text-shadow: var(--textShadow);
 	color: var(--primary);
+	text-align: center;
+	font-family: var(--headingFont);
+}
+h4 {
+	color: var(--tertiary);
 	text-align: center;
 	font-family: var(--headingFont);
 }
@@ -54,6 +61,12 @@ nav > div > img {
 	padding: 3px;
 	border: 1px solid #021a40;
 	background-color: var(--primary);
+}
+table {
+	background-color: white;
+	box-shadow: var(--boxShadow);
+	max-width: 600px;
+	text-align: center;
 }
 .nav-links {
 	display: inline;
@@ -83,6 +96,7 @@ nav > div > img {
 	background-color: rgba(45, 54, 103, 0.4);
 	color: white;
 	backdrop-filter: blur(6px);
+	margin: 10px 10px;
 }
 
 .user-form {
@@ -106,15 +120,15 @@ legend {
 	padding: 0px 10px;
 	font-weight: 500;
 }
-.car-form-constainer {
+.car-form-container {
 	display: flex;
 	justify-content: center;
 }
 .form-image img {
 	max-height: 500px;
 	border-top-left-radius: 10px;
-	box-shadow: 0 -5px 5px -5px rgb(45, 54, 103), 0 -5px 5px -5px rgb(45, 54, 103),
-		-5px 0 5px -5px rgb(45, 54, 103), -5px 0 5px -5px rgb(45, 54, 103);
+	box-shadow: 0 -5px 5px -5px #2d3667, 0 -5px 5px -5px #2d3667,
+		-5px 0 5px -5px #2d3667, -5px 0 5px -5px #2d3667;
 }
 .car-form {
 	width: 300px;
@@ -128,8 +142,8 @@ legend {
 	backdrop-filter: blur(2px);
 	color: white;
 	text-shadow: 2px 2px 3px red;
-	box-shadow: 0 -5px 5px -5px rgb(45, 54, 103), 0 -5px 5px -5px rgb(45, 54, 103),
-		5px 0 5px -5px rgb(45, 54, 103), 5px 0 5px -5px rgb(45, 54, 103);
+	box-shadow: 0 -5px 5px -5px #2d3667, 0 -5px 5px -5px #2d3667,
+		5px 0 5px -5px #2d3667, 5px 0 5px -5px #2d3667;
 }
 .details-container {
 	display: flex;
@@ -137,8 +151,7 @@ legend {
 }
 #detail-image {
 	align-self: center;
-	box-shadow: 1px 1px 10px black, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
-		-1px 1px 10px #ddd;
+	box-shadow: var(--boxShadow);
 	margin: 0 0 10px 0;
 }
 #detail-image img {
@@ -154,6 +167,7 @@ legend {
 	text-shadow: var(--textShadow);
 	backdrop-filter: blur(6px);
 	padding: 30px;
+	margin: 10px 10px 10px 0;
 }
 footer {
 	display: flex;
@@ -186,6 +200,7 @@ caption {
 .bid-form {
 	width: 250px;
 	height: 400px;
+	margin-top: 10px;
 	padding: 0 30px;
 	display: flex;
 	flex-direction: column;
@@ -200,8 +215,15 @@ caption {
 .bid-form > form > label {
 	padding: 10px 0;
 }
-
+#home {
+	display: flex;
+	justify-content: space-between;
+}
 @media only screen and (max-width: 900px) {
+	body {
+		background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1834&q=80");
+		background-position: center;
+	}
 	#details {
 		display: flex;
 		flex-direction: column;
@@ -215,7 +237,6 @@ caption {
 		align-items: center;
 		justify-content: space-around;
 		border-radius: 10px;
-
 		background-color: rgba(45, 54, 103, 0.6);
 		backdrop-filter: blur(2px);
 		color: white;
@@ -224,12 +245,30 @@ caption {
 	}
 	nav {
 		height: 3rem;
-		display: flex;
-		justify-content: space-around;
-		background-image: url("/imgs/banner.png");
-		align-items: center;
 		font-size: 16px;
+	}
+	#car-details {
+		font-size: 16px;
+	}
+	.form-image > img {
+		display: none;
+	}
+	.car-form {
+		color: white;
 		text-shadow: var(--textShadow);
-		color: var(--primary);
+		padding: 0 30px;
+		border-radius: 10px;
+		box-shadow: var(--boxShadow);
+	}
+}
+@media only screen and (max-width: 650px) {
+	#home-icon {
+		display: none;
+	}
+	#detail-image img {
+		max-width: 450px;
+	}
+	#car-details {
+		max-width: 400px;
 	}
 }

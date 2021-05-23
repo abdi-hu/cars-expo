@@ -1,9 +1,11 @@
 <%- include('partials/header')%>
 <main>
 	<div id="home-page">
-		<p>Please Login or Register to view our inventory</p>
-		<a class="nav-links" href="/users/signin">Login</a>
-		<a class="nav-links" href="/users/new">Register</a>
+		<%if(loggedIn) {%>
+		<p>Welcome <%=loggedIn.firstName%>!</p>
+		<%} else {%>
+		<p>Please Login to view our inventory</p>
+		<%}%>
 	</div>
 </main>
 <%- include('partials/footer')%>
