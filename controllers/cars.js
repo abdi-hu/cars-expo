@@ -25,8 +25,30 @@ function index(req, res) {
 function show(req, res) {
 	if (req.user) {
 		Car.findById(req.params.id, (err, car) => {
+			const highestBid = Math.max(
+				car.bids.map((bid) => {
+					return parseInt(bid.amount);
+				})
+			);
+			const auctionDate = new Date("Sept 25, 2021 16:00:00").getTime();
+			const now = new Date().getTime();
+			const auctionTimer = auctionDate - now;
+			const days = Math.floor(auctionTimer / (1000 * 60 * 60 * 24));
+			const hours = Math.floor(
+				(auctionTimer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+			);
+			const minutes = Math.floor(
+				(auctionTimer % (1000 * 60 * 60)) / (1000 * 60)
+			);
+			const seconds = Math.floor((auctionTimer % (1000 * 60)) / 1000);
 			res.render("cars/show", {
 				car,
+				highestBid,
+				auctionTimer,
+				days,
+				hours,
+				minutes,
+				seconds,
 				loggedIn: req.user,
 				title: "Details",
 				admin: req.user.admin,

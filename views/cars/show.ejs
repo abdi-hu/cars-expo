@@ -17,12 +17,11 @@
 				<%}%>
 				<p><%=car.description%></p>
 				<%if(car.bids) {%>
-				<p>
-					Total Bids:<%= car.bids.length; %> <%if(admin) {%>
-					<a href="/bids">View All Bids</a>
-					<%}%> <%} else {%>
-				</p>
-
+				<p>Highest Bid: $<%= highestBid; %></p>
+				<p><%=days%> days <%=hours%> hrs <%=minutes%> mins</p>
+				<%if(admin) {%>
+				<a href="/bids">View All Bids</a>
+				<%}%> <%} else {%>
 				<p>No Bids Yet</p>
 				<%}%>
 			</div>
