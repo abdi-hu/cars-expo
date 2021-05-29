@@ -40,7 +40,7 @@ Deployed Site: cars-expo.herokuapp.com
 
 ![Screenshot of home page](./public/imgs/updated-home.png)
 ![Screenshot of inventory](./public/imgs/updated-inventory.png)
-![Screenshot of all current bids](./public/imgs/updated-details.png)
+![Screenshot of detail](./public/imgs/updated-detail.png)
 ![Screenshot of adding car](./public/imgs/updated-new.png)
 ![Screenshot of inventory](./public/imgs/updated-mb-inventory.png)
-![Screenshot of car details](./public/imgs/updated-mb-details.png)
+![Screenshot of mb detail](./public/imgs/updated-mb-detail.png)
